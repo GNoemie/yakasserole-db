@@ -23,7 +23,7 @@ Voici la procédure afin d'installer le serveur PostgreSQL:
 ## Cloner le dépot 
 ```sh
 # Cloner le dépot
-git clone https://Bensabat@gitlab.com/Bensabat/docker-postgres.git
+git clone https://[LOGIN]@gitlab.com/Yakasserole/Yakasserole.git
 
 # Se déplacer dans le répertoire
 cd docker-postgres
