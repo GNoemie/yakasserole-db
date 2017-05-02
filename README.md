@@ -44,7 +44,15 @@ postgres:
 	...
 ```
 
+## Pré-requis
+
+Si votre distribution est "Ubuntu", exécutez la commande suivante :
+```sh
+./createdb.sh
+```
+
 ## Exécuter
+
 Afin de lancer le serveur PostgreSQL, exécutez la commande suivante :
 
 ```sh
