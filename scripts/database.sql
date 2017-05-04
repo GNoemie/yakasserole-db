@@ -3,13 +3,13 @@ CREATE TABLE Utilisateur(
     role            varchar(25),
     premium         boolean,
 
-    nom             varchar(50),
-    prenom          varchar(50),
+    nom             varchar(255),
+    prenom          varchar(255),
     date_naissance  date,
-    adresse_postale varchar(50),
+    adresse_postale varchar(255),
 
-    mail            varchar(50),
-    mot_de_passe    varchar(50),
+    mail            varchar(255),
+    mot_de_passe    varchar(255),
     date_inscrit    date
 );
 
