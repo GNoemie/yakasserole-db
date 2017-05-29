@@ -1,12 +1,13 @@
 CREATE TABLE Utilisateur(
-    id              serial          PRIMARY KEY,
+    id              SERIAL NOT NULL PRIMARY KEY,
     role            varchar(25),
     premium         boolean,
 
     nom             varchar(255),
     prenom          varchar(255),
-    date_naissance  date,
     adresse_postale varchar(255),
+    code_postal	    varchar(5),
+    ville	    varchar(255),
 
     mail            varchar(255),
     mot_de_passe    varchar(255),
@@ -21,6 +22,7 @@ CREATE TABLE Recette(
     auteur          int             REFERENCES Utilisateur (id),
     titre           varchar(50),
     type            varchar(50),
+    ingredients	    varchar(255),
     description     varchar(50),
     difficulte      decimal(1)
 );
@@ -51,7 +53,7 @@ CREATE TABLE Atelier(
     id              serial          PRIMARY KEY,
     chef            int             REFERENCES Utilisateur (id),
 
-    nom             varchar(255),
+    titre	    varchar(255),
     theme           varchar(255),
     description     text,
 
@@ -76,3 +78,5 @@ CREATE TABLE Reservation(
     date_reserv     date
 );
 --- Fin tables pour la section Atelier ---
+
+INSERT INTO Utilisateur VALUES (DEFAULT, 'admin', true, 'YaKasserole', 'Administrateur', 'quartier Compans', '31000', 'Toulouse', 'yakasserole@gmail.com', '60cb169341e75e6bc7fc70c1b17d3a7fc1149cea481462485bf470ddeece2b31', '2017-06-27');
