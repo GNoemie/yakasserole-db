@@ -2,7 +2,8 @@ CREATE TABLE Utilisateur(
     id              SERIAL NOT NULL PRIMARY KEY,
     role            varchar(25),
     premium         boolean,
-
+    confirm	    boolean,
+    
     nom             varchar(255),
     prenom          varchar(255),
     adresse_postale varchar(255),
@@ -11,13 +12,25 @@ CREATE TABLE Utilisateur(
 
     mail            varchar(255),
     mot_de_passe    varchar(255),
-    date_inscrit    date
+    date_inscrit    timestamp
+);
+
+CREATE TABLE confirmation(
+       cle   varchar(255),
+       mail   varchar(255)
+       
+);
+
+CREATE TABLE mdprecup(
+       cle   varchar(255),
+       mail   varchar(255)
+       
 );
 
 --- Les tables pour la section Recette ---
 CREATE TABLE Recette(
     id              serial          PRIMARY KEY,
-    date_post       date,
+    date_post       timestamp,
 
     auteur          int             REFERENCES Utilisateur (id),
     titre           varchar(50),
@@ -42,7 +55,7 @@ CREATE TABLE Commentaire_recette(
     id              serial          PRIMARY KEY,
     auteur          int             REFERENCES Utilisateur (id),
     recette         int             REFERENCES Recette (id),
-    date_post       date,
+    date_post       timestamp,
     contenu         text
 );
 --- Fin tables pour la section Recette ---
@@ -67,7 +80,7 @@ CREATE TABLE Commentaire_atelier(
     id              serial          PRIMARY KEY,
     auteur          int             REFERENCES Utilisateur (id),
     atelier         int             REFERENCES Atelier (id),
-    date_post       date,
+    date_post       timestamp,
     contenu         text
 );
 
@@ -75,8 +88,8 @@ CREATE TABLE Reservation(
     atelier         int             REFERENCES Atelier (id),
     utilisateur     int             REFERENCES Utilisateur (id),
     nombre_pers     int,
-    date_reserv     date
+    date_reserv     timestamp
 );
 --- Fin tables pour la section Atelier ---
 
-INSERT INTO Utilisateur VALUES (DEFAULT, 'admin', true, 'YaKasserole', 'Administrateur', 'quartier Compans', '31000', 'Toulouse', 'yakasserole@gmail.com', '60cb169341e75e6bc7fc70c1b17d3a7fc1149cea481462485bf470ddeece2b31', '2017-06-27');
+INSERT INTO Utilisateur VALUES (DEFAULT, 'admin', true, true, 'YaKasserole', 'Administrateur', 'quartier Compans', '31000', 'Toulouse', 'yakasserole@gmail.com', '60cb169341e75e6bc7fc70c1b17d3a7fc1149cea481462485bf470ddeece2b31', '2017-06-27');
