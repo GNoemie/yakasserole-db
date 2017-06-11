@@ -37,7 +37,8 @@ CREATE TABLE Recette(
     type            varchar(50),
     ingredients	    varchar(255),
     description     varchar(50),
-    difficulte      decimal(1)
+    difficulte      decimal(1),
+    image           text
 );
 
 CREATE TABLE Ingredient(
@@ -73,7 +74,8 @@ CREATE TABLE Atelier(
     localisation    varchar(255),
     prix            decimal(5,2),
     date_debut      date,
-    date_fin        date
+    date_fin        date,
+    image           text
 );
 
 CREATE TABLE Commentaire_atelier(
