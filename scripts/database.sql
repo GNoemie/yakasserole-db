@@ -12,7 +12,7 @@ CREATE TABLE Utilisateur(
 
     mail            varchar(255),
     mot_de_passe    varchar(255),
-    date_inscrit    timestamp
+    date_inscrit    timestamp,
     image           text
 );
 
